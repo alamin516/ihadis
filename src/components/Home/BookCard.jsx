@@ -1,11 +1,15 @@
+"use client"
 import { bengaliNumeral } from "@/utilities/bengaliNumeral";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 const BookCard = ({book}) => {
+  const pathname = usePathname();
+
   return (
     <div
       name="bookCard"
-      className="p-5 sm-max:p-4 flex  group cursor-pointer  drop-shadow-[0_2px_20px_rgba(0,0,0,0.05)] false bg-white  hover:dark:bg-darkchapter-list-hover dark:bg-hadith-dark-card justify-between items-center rounded-2xl h-[6.25rem]"
+      className={`p-5 sm-max:p-4 flex  group cursor-pointer  false ${pathname === '/all-books' ? 'hover:bg-[#ebfcf6]' : 'drop-shadow-[0_2px_20px_rgba(0,0,0,0.05)]'} bg-white  hover:dark:bg-darkchapter-list-hover dark:bg-hadith-dark-card justify-between items-center rounded-2xl h-[6.25rem]`}
     >
       <div className="flex items-center gap-4">
         <div className="h-12 w-12 sm-max:w-10 xl:w-10  flex items-center justify-center relative">

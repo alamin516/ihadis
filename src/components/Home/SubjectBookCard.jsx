@@ -1,11 +1,15 @@
+'use client'
 import { bengaliNumeral } from "@/utilities/bengaliNumeral";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 const SubjectBookCard = ({book}) => {
+  const pathname = usePathname();
+
   return (
     <div
       name="bookCard"
-      className="p-5 sm-max:p-4 flex  group cursor-pointer  drop-shadow-[0_2px_20px_rgba(0,0,0,0.05)] false bg-white  hover:dark:bg-darkchapter-list-hover dark:bg-hadith-dark-card justify-between items-center rounded-2xl h-[6.25rem]"
+      className={`p-5 sm-max:p-4 flex  group cursor-pointer  false ${pathname === '/subjectwise' ? 'hover:bg-[#ebfcf6]' : 'drop-shadow-[0_2px_20px_rgba(0,0,0,0.05)] '} bg-white  hover:dark:bg-darkchapter-list-hover dark:bg-hadith-dark-card justify-between items-center rounded-2xl h-[6.25rem]`}
     >
       <div className="flex items-center gap-4">
         <div className="h-12 w-12 sm-max:w-10 xl:w-10  flex items-center justify-center relative">
@@ -28,7 +32,7 @@ const SubjectBookCard = ({book}) => {
         </div>
         <div className="flex flex-col justify-between gap-1.5 group">
           <h4 className="text-base font-medium leading-7 text-[15px] text-black group-hover: dark:group-hover:text-subcat-hover dark:text-hadith-deepoffwhite xss:text-[15px] md:text-base xl:text-base style-Kalpurush max-line-2">
-            সহিহ বুখারী
+            {book.bn}
           </h4>
           <div className="text-[#40404099] dark:text-dark-text-subtitle style-Kalpurush-dropdown text-sm leading-[26px] md:text-[13px]">
             হাদিসের রেঞ্জ: <span>{bengaliNumeral(book.hadith_count)}</span>

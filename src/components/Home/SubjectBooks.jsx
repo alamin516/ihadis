@@ -9,6 +9,8 @@ const getData = async () => {
 const SubjectBooks = async () => {
   const data = await getData();
 
+  console.log(data)
+
   return (
     <div className="mt-[75px] xss:mt-10 xs:mt-10 lg-max:max-w-[94%] lg-max:mx-auto sm:mt-9 md:p-0 md:mt-[35px] lg:mt-[65px]">
       <h3 className="flex items-center justify-center font-semibold text-hadith-black dark:text-hadith-deepoffwhite mb-[15px] xss:text-[22px] xs:text-[22px] sm:text-[22px] md:text-[28px] lg-min:text-[35px] lg-min:leading-[52.5px]">
@@ -33,7 +35,7 @@ const SubjectBooks = async () => {
         <div className="py-[15px] text-white px-[20px] bg-hadith-button-background rounded-xl hover:drop-shadow-[0_10px_6px_rgba(0,0,0,0.1)]">
           <div className="text-base flex gap-3 cursor-pointer">
             <img src="/images/subject.svg" alt="" />
-            সকল হাদিস গ্রন্থসমূহ
+            সকল ক্যাটেগরি দেখুন
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

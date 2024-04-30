@@ -135,6 +135,10 @@ button {
   box-shadow: none;
 }
 
+.calctest {
+  height: calc(100vh - 80px);
+}
+
 progress {
   vertical-align: baseline;
 }
@@ -3208,8 +3212,8 @@ a {
   width: 25px;
   border-radius: 10px;
 }
-.calctest {
-  height: calc(100vh - 80px);
+.calc_master_layout {
+  height: calc(100vh - 80px)!important;
 }
 .video_sidebar {
   min-width: 350px;

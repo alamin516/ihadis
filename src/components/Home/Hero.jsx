@@ -14,7 +14,7 @@ const Hero = () => {
           আপনার পছন্দের হাদিস খুঁজুন
         </h1>
         <HeroSearchForm />
-        <div className="w-full h-64 lg:h-48 text-center text-white sm:mb-5 xs:w-10/12 sm:w-9/12 md:w-9/12 lg:w-9/12 xl:w-7/12 2xl:w-6/12">
+        <div className="w-full lg:h-64 h-48 text-center text-white xs:w-10/12 sm:w-9/12 md:w-9/12 lg:w-9/12 xl:w-7/12 2xl:w-6/12">
           <Slider />
         </div>
       </div>
