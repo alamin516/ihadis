@@ -1,10 +1,10 @@
 import MasterNavbar from "./MasterNavbar"
 import SideNavbar from "./SideNavbar"
 
-const MasterLayout = ({children}) => {
+const MasterLayout = ({children, title}) => {
   return (
     <div className="w-full max-h-screen bg-white dark:bg-hadith-dark-card relative style-bn">
-        <MasterNavbar/>
+        <MasterNavbar title={title}/>
         <div className="justify-between calctest flex-none md:flex">
             <div className="bg-hadith-body-grey-bg dark:bg-hadith-dark-bg dark:lg-min:rounded-tl-3xl fixed h-full items-center justify-center left-24 lg-min:rounded-tl-3xl right-0 xs:left-0 xss:left-0 xss:max-w-full">
                 {children}

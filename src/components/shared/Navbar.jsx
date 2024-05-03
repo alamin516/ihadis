@@ -1,9 +1,31 @@
 "use client";
-
+import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import ModalForm from "../Modals/ModalForm";
 
 const Navbar = () => {
   const router = useRouter();
+  const ref = useRef(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setIsModalOpen(false);
+      }
+    };
+
+    document.body.removeEventListener("click", handleClickOutside);
+    return () => {
+      document.body.addEventListener("click", handleClickOutside);
+    };
+  }, []);
+
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
   return (
     <nav className="bg-white dark:bg-hadith-dark-card sticky shadow-sm top-0 z-50">
       <div className="mx-auto flex h-20 items-center justify-between md:p-0 lg:py-12 sm:p-0 lg:px-4 w-10/12 xs:min-w-full xs:p-0 xs:px-4 xss:w-full">
@@ -31,7 +53,11 @@ const Navbar = () => {
                 হোম
               </p>
             </div>
-            <p className="style-Kalpurush text-main-menu dark:text-hadith-deepoffwhite font-normal text-lg leading-5 cursor-pointer hover:lg-max:bg-subcat-hover hover:lg-max:text-white hover:xl-min:text-[#399e7b] lg-max:w-full lg-max:py-4 lg-max:px-6 lg-max:rounded-xl">
+            <p
+              onClick={openModal}
+              ref={ref}
+              className="style-Kalpurush text-main-menu dark:text-hadith-deepoffwhite font-normal text-lg leading-5 cursor-pointer hover:lg-max:bg-subcat-hover hover:lg-max:text-white hover:xl-min:text-[#399e7b] lg-max:w-full lg-max:py-4 lg-max:px-6 lg-max:rounded-xl"
+            >
               হাদিসে যান
             </p>
             <p
@@ -72,7 +98,7 @@ const Navbar = () => {
               >
                 <path
                   d="M12.8863 14.7273H27.6136M12.8863 20.25H27.6136M21.1704 25.7727H27.6136"
-                  stroke-width="2.30114"
+                  strokeWidth="2.30114"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 ></path>
@@ -81,6 +107,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+        <ModalForm isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
     </nav>
   );
 };

@@ -1,4 +1,3 @@
-import React from "react";
 
 const ChapTitle = ({title}) => {
   return (
@@ -8,12 +7,12 @@ const ChapTitle = ({title}) => {
     lg:rounded-b-xl"
     >
       <div className="flex justify-between items-center xss:flex-col xss:gap-3 xs:flex-col xs:gap-3">
-        <h3 class="text-2xl text-offgrey-text-color dark:text-dark-text md:text-2xl font-bold xs-max:my-4">
+        <h3 className="text-2xl text-offgrey-text-color dark:text-dark-text md:text-2xl font-bold xs-max:my-4">
           {title}
         </h3>
-        <div class="relative xss:w-full xs:w-full">
+        <div className="relative xss:w-full xs:w-full">
           <svg
-            class="absolute top-[1.2rem] left-4 fill-[#5C5C5C] dark:fill-white"
+            className="absolute top-[1.2rem] left-4 fill-[#5C5C5C] dark:fill-white"
             width="15"
             height="15"
             viewBox="0 0 15 15"
@@ -24,7 +23,7 @@ const ChapTitle = ({title}) => {
           </svg>
           <input
             placeholder="Search For Filter"
-            class="border-[#DEE1E5] text-hadith-offblack border-2 dark:border-dark-cat-border p-3 rounded-lg focus:outline-0 focus:text-black dark:text-hadith-deepoffwhite px-10 
+            className="border-[#DEE1E5] text-hadith-offblack border-2 dark:border-dark-cat-border p-3 rounded-lg focus:outline-0 focus:text-black dark:text-hadith-deepoffwhite px-10 
             bg-[#f8f8f9] dark:bg-darkchapter-list-hover xss:w-full xs:w-full"
             type="text"
           />
